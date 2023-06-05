@@ -25,15 +25,18 @@ function formatarPreco(preco) {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Mukta&family=Press+Start+2P&display=swap');
 .card-livro {
   margin: 5px 10px;
   padding: 10px;
-  background-color: beige;
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
   width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: 'Mukta', sans-serif;
+  font-size: 17px;
 }
 
 .wrap-livro {
@@ -52,10 +55,12 @@ function formatarPreco(preco) {
 
 .card-livro p {
   margin: 0;
+  color: white;
 }
 
 .card-livro .titulo-livro {
   font-weight: bold;
   margin-bottom: 5px;
+  color: white;
 }
 </style>
