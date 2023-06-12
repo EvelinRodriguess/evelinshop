@@ -21,6 +21,13 @@ import ListagemLivros from '@/components/ListagemLivros.vue'
 }
 h1 {
   font-family: 'Bruno Ace SC', cursive;
-  align-items: center;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border-color: rgb(255, 255, 255);
+  border-style: groove;
+  border-width: 7px;
 }
 </style>

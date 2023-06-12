@@ -1,5 +1,7 @@
 <script setup>
 import { adicionarAoCarrinho } from '@/_data/carrinho.js'
+import MButton from './MButton.vue'
+
 
 const props = defineProps({ livro: Object })
 
@@ -14,12 +16,15 @@ function formatarPreco(preco) {
       <div class="wrap-livro">
         <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
       </div>
+      <hr />
       <p class="titulo-livro">{{ props.livro.title }}</p>
       <p class="autor-livro">{{ props.livro.author }}</p>
       <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
     </div>
     <div class="card-buttons-livros">
-      <button @click="adicionarAoCarrinho(props.livro)">Adicionar ao carrinho</button>
+      <hr />
+      <m-button @click="adicionarAoCarrinho(props.livro)" text="Add" />
+      <m-button class="estrela" text="&#9734;" />
     </div>
   </div>
 </template>
@@ -31,14 +36,25 @@ function formatarPreco(preco) {
   padding: 10px;
   background-color: rgb(0, 0, 0);
   border-radius: 10px;
+  border-style:groove;
   width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Mukta', sans-serif;
   font-size: 17px;
+  border-width: 7px;
 }
 
+.estrela:hover {
+  transition:0.5s;
+  color: yellow;
+}
+
+button:hover {
+  transition: 0.6s;
+  color: red;
+}
 .wrap-livro {
   display: flex;
   justify-content: center;
@@ -62,5 +78,9 @@ function formatarPreco(preco) {
   font-weight: bold;
   margin-bottom: 5px;
   color: white;
+}
+hr {
+  border-radius: 2px;
+  border-style: groove;
 }
 </style>

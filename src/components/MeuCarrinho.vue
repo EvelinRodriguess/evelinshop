@@ -1,5 +1,7 @@
 <script setup>
 import { carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
+import MButton from './MButton.vue'
+import MMessage from './MMessage.vue';
 
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -9,8 +11,9 @@ function formatarPreco(preco) {
 <template>
   <div class="carrinho">
     <h2>Meu carrinho</h2>
+    <hr />
     <div class="wrap-carrinho">
-      <p v-if="carrinho.itens.length === 0">Seu carrinho está vazio</p>
+      <m-message v-if="carrinho.itens.length === 0"/>
       <div v-else>
         <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">
           <div class="info-livro">
@@ -39,30 +42,50 @@ function formatarPreco(preco) {
           </div>
         </div>
       </div>
+      <m-button text="Clear" />
+      <m-button text="Close"/>
+      <m-button text="Favorites"/>
+      <m-button text="Keep Buying"/>
+
       <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
     </div>
   </div>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Mukta&family=Press+Start+2P&display=swap');
+.carrinho{
+background-color: rgb(0, 0, 0);
+border-radius: 4px;
+border-width: 7px;
+border-color: white;
+border-style: groove;
+text-align: center;
+}
+
+h2{
+    font-family: 'Bruno Ace SC', cursive;
+    color: white;
+}
 .wrap-carrinho .carrinho-total {
-  position: fixed;
+  position: relative;
   bottom: 3%;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Bruno Ace SC', cursive;
+  color: white;
 }
 
 .item-carrinho .info-livro {
   display: flex;
   margin-bottom: 10px;
-  
+  color: white;
 }
 .detalhes-livro {
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+  font-family: 'Mukta', sans-serif;
 }
 .detalhes-livro p {
   margin: 0;
@@ -80,6 +103,7 @@ function formatarPreco(preco) {
   border-bottom: 1px solid black;
   background-color: transparent;
   margin-left: 10px;
+  color: white;
 }
 
 .detalhes-livro button {
@@ -98,9 +122,5 @@ function formatarPreco(preco) {
 .icon-capa-livro {
   width: 30px;
   margin-right: 10px;
-}
-
-h2{
-    font-family: 'Bruno Ace SC', cursive;
 }
 </style>
