@@ -55,10 +55,10 @@ function formatarPreco(preco) {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Mukta&family=Press+Start+2P&display=swap');
 .carrinho{
-background-color: rgb(0, 0, 0);
+background-color: rgb(156, 42, 221);
 border-radius: 4px;
 border-width: 7px;
-border-color: white;
+border-color: rgb(0, 0, 0);
 border-style: groove;
 text-align: center;
 }
